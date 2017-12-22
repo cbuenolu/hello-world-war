@@ -16,11 +16,11 @@ pipeline {
             agent {
                 docker { 
                     image 'tomcat'
-                    args '-u 0:0 -v /var/lib/jenkins/workspace/test-carlos/target/:/tmp'
+                    args '-u 0:0 -v /var/lib/jenkins/workspace/test-carlos/target/:/tmp -p 8080:8082'
                 }
             }
             steps {
-                sh 'cp /tmp/hello-world-war-1.0.0.war /usr/local/tomcat/webapps/ && sleep 5 && wget -O - http://localhost://hello-world-war-1.0.0'
+                sh 'cp /tmp/hello-world-war-1.0.0.war /usr/local/tomcat/webapps/ && sleep 5 && wget -O - http://localhost:8082//hello-world-war-1.0.0'
             }
         }
     }
