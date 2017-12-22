@@ -20,7 +20,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'cp /var/lib/jenkins/workspace/test-carlos/target/hello-world-war-1.0.0.war e42918b79885:/usr/local/tomcat/webapps/'
+                sh 'cp /tmp/hello-world-war-1.0.0.war e42918b79885:/usr/local/tomcat/webapps/'
             }
         }
     }
