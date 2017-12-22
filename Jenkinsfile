@@ -16,7 +16,7 @@ pipeline {
             agent {
                 docker { 
                     image 'tomcat'
-                    args '-v /var/lib/jenkins/workspace/test-carlos/target/:/tmp'
+                    args '-u 0:0 -v /var/lib/jenkins/workspace/test-carlos/target/:/tmp'
                 }
             }
             steps {
