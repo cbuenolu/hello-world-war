@@ -9,7 +9,8 @@ pipeline {
                 }
             }
             steps {
-                sh 'mvn -B -DskipTests clean package && stash(name: 'server', includes: '**/*.war')'
+                sh 'mvn -B -DskipTests clean package'
+                stash(name: 'server', includes: '**/*.war')
             }
         }
         stage('Deploy') {
