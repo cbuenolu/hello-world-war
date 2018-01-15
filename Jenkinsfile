@@ -17,7 +17,7 @@ pipeline {
             agent {
                 docker { 
                     image 'tomcat'
-                    args '-p 8085:8082'
+                    args '-u 0:0 -p 8085:8082'
                 }
             }
             steps {
