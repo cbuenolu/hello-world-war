@@ -20,7 +20,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'cp /tmp/hello-world-war-1.0.0.war /usr/local/tomcat/webapps/ && sleep 5 && wget -O - http://localhost:8082//hello-world-war-1.0.0'
+                sh 'cp /tmp/hello-world-war-1.0.0.war /usr/local/tomcat/webapps/ && sleep 25 && wget -O - http://localhost:8082//hello-world-war-1.0.0'
             }
         }
     }
