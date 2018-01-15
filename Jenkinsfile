@@ -22,7 +22,7 @@ pipeline {
             }
             steps {
                 unstash 'server'
-                sh 'cp target/hello-world-war-1.0.0.war /usr/local/tomcat/webapps/hello-world-war-1.0.0.war && sleep 25 && wget -O - http://localhost:8082//hello-world-war-1.0.0'
+                sh 'cp target/hello-world-war-1.0.0.war /usr/local/tomcat/webapps/hello-world-war-1.0.0.war && sleep 10 && wget -O - http://192.168.56.101:8082//hello-world-war-1.0.0'
                 input(message: 'Deploy?', ok: 'Go!!')
             }
         }
